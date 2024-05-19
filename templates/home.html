@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title class="">SleepyHeads</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    * {
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body {
+      background-color: rgb(145, 201, 201);
+      font-size: 16px;
+    }
+
+    .heading {
+      text-align: center;
+      max-width: 500px;
+    }
+
+    .headhead {
+      display: flex;
+      justify-content: center;
+    }
+
+    .heading1 {
+      display: flex;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .heading1 h1 {
+      max-width: 400px;
+      padding: 10px 20px;
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 16px;
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+      backdrop-filter: blur(5px);
+      -webkit-backdrop-filter: blur(5px);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      background: -webkit-linear-gradient(#243949 0%, #517fa4 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .form-container {
+      display: flex;
+      justify-content: center;
+    }
+
+    .form-box {
+      /* border: 2px black solid; */
+      padding: 30px 40px;
+      background-image: linear-gradient(to right, #243949 0%, #517fa4 100%);
+      border-radius: 10px;
+      box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+    }
+
+    .lbl {
+      font-weight: bold;
+      color: aliceblue;
+    }
+
+    .lbl-field {
+      display: flex;
+      justify-content: space-between;
+      gap: 80px;
+    }
+
+    .btn {
+      padding: 10px 30px;
+      color: rgb(227, 223, 255);
+      border: none;
+      border-radius: 10px;
+      font-size: large;
+      background-image: linear-gradient(15deg, #13547a 0%, #80d0c7 100%);
+    }
+
+    .sub-btn {
+      display: flex;
+      justify-content: center;
+
+    }
+
+    .input-text {
+      padding: 5px 12px;
+      font-size: 14px;
+      line-height: 20px;
+      color: #000000;
+      vertical-align: middle;
+      background-color: #e5e6ff;
+      background-repeat: no-repeat;
+      background-position: right 8px center;
+      border: 1px solid #ffffff9c;
+      border-radius: 6px;
+      outline: none;
+      box-shadow: rgba(225, 228, 232, 0.2) 0px 1px 0px 0px inset;
+
+      :focus {
+        border-color: #0366d6;
+        outline: none;
+        box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 0px 3px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="heading1">
+    <h1>Sleep Disorder Detector</h1>
+  </div>
+  <div class="headhead">
+    <h3 class="heading">The is a machine learning model that predicts sleep disorder. Fill-up the form below to find out
+      if you have insomnia, sleep apnea or none of them.</h3>
+  </div>
+  <div class="form-container">
+    <form class="form-box" action="{{url_for('predict')}}" method="post">
+      <div class="lbl-field">
+        <label class="lbl" for="Gender">Gender:</label>
+        <select class="input-text" name="Gender" id="Gender">
+          <option value="0">Female</option>
+          <option value="1">Male</option>
+        </select>
+      </div>
+      <br />
+
+      <div class="lbl-field">
+        <label class="lbl" for="Gender">Age:</label>
+        <input class="input-text" type="text" name="Age" placeholder="Age" required="required" />
+      </div>
+      <br />
+      <div class="lbl-field">
+        <label class="lbl" for="Occupation">Occupation:</label>
+        <select class="input-text" name="Occupation" id="Occupation">
+          <option value="0">Accountant</option>
+          <option value="1">Doctor</option>
+          <option value="2">Engineer</option>
+          <option value="3">Lawyer</option>
+          <option value="4">Manager</option>
+          <option value="5">Nurse</option>
+          <option value="6">Sales Representative</option>
+          <option value="7">Salesperson</option>
+          <option value="8">Scientist</option>
+          <option value="9">Software Engineer</option>
+          <option value="10">Teacher</option>
+        </select>
+      </div>
+      <br />
+      <div class="lbl-field">
+        <label class="lbl" for="Gender">Sleep duration:</label>
+        <input class="input-text" type="text" name="Sleep Duration" placeholder="Sleep Duration" required="required" />
+      </div>
+      <br />
+      <div class="lbl-field">
+        <label class="lbl" for="Gender">Quality of sleep (1-10):</label>
+        <input class="input-text" type="text" name="Quality of Sleep" placeholder="Quality of Sleep"
+          required="required" />
+      </div>
+      <br />
+      <div class="lbl-field">
+        <label class="lbl" for="Gender">Physical Activity Level (1-100):</label>
+        <input class="input-text" type="text" name="Physical Activity Level" placeholder="Physical Activity Level"
+          required="required" />
+      </div>
+      <br />
+      <div class="lbl-field">
+        <label class="lbl" for="Gender">Stress Level (1-10):</label>
+        <input class="input-text" type="text" name="Stress Level" placeholder="Stress Level" required="required" />
+      </div>
+      <br />
+      <div class="lbl-field">
+        <label class="lbl" for="BMI Category">BMI Category:</label>
+        <select class="input-text" name="BMI Category" id="BMI Category">
+          <option value="0">Normal</option>
+          <option value="1">Obese</option>
+          <option value="2">Overweight</option>
+        </select>
+      </div>
+      <br />
+      <div class="lbl-field">
+        <label class="lbl" for="Gender">Heart rate:</label>
+        <input class="input-text" type="text" name="Heart Rate" placeholder="Heart Rate" required="required" />
+      </div>
+      <br />
+      <div class="lbl-field">
+        <label class="lbl" for="Gender">Daily steps:</label>
+        <input class="input-text" type="text" name="Daily Steps" placeholder="Daily Steps" required="required" />
+      </div>
+      <br />
+      <div class="lbl-field">
+        <label class="lbl" for="Gender">Blood Pressure (SYSTOLIC):</label>
+        <input class="input-text" type="text" name="Blood Pressure High" placeholder="Blood Pressure (upper)"
+          required="required" />
+      </div>
+      <br />
+      <div class="lbl-field">
+        <label class="lbl" for="Gender">Blood Pressure (DIASTOLIC):</label>
+        <input class="input-text" type="text" name="Blood Pressure Low" placeholder="Blood Pressure (lower)"
+          required="required" />
+      </div>
+      <br />
+      <!-- <input type="text" name="Gender" placeholder="Gender" required="required" />
+                <input type="text" name="Occupation" placeholder="Occupation" required="required" />
+                <input type="text" name="BMI Category" placeholder="BMI Category" required="required" /> -->
+
+      <div class="sub-btn">
+        <button class="btn" type="submit">Predict</button>
+      </div>
+    </form>
+  </div>
+  <br />
+</body>
+
+</html>

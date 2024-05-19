@@ -1,0 +1,41 @@
+'Male' 1, 
+'Female' 0,
+
+    'Doctor' 1, 
+    'Teacher' 10, 
+    'Software Engineer' 9, 
+    'Lawyer' 3, 
+    'Engineer' 2,
+    'Accountant' 0, 
+    'Nurse' 5, 
+    'Scientist' 8, 
+    'Manager' 4, 
+    'Salesperson' 7,
+    'Sales Representative' 6,
+
+'Normal' 0, 
+'Obese' 1,
+'Overweight' 2, 
+
+'Healthy' 0, 
+'Insomnia' 1,
+'Sleep Apnea' 2, 
+
+
+Gender: [1 0]
+Occupation: [ 1 10  9  3  2  0  5  8  4  7  6]
+BMI Category: [0 1 2]
+Sleep Disorder: [0 1 2]
+
+# 0 55 5 8.1 9 75 3 2 68 7000 140 95 -> 2 -> 2
+# 0 57 5 8.1 9 75 3 2 68 7000 140 95 -> 0 -> 2
+# 0 59 5 8.1 9 75 3 2 68 7000 140 95 -> 2 -> 2
+# 1 28 9 5.9 4 30 8 1 85 3000 140 90 -> 2 -> 2
+# 1 35 1 6.65 7 50 7 0 71 7100 120 80 -> 0 -> 1
+# 1 42 10 6.90 8 52 4 0 66 7000 135 90 -> 0 -> 1
+
+# https://www.kaggle.com/datasets/imaginativecoder/sleep-health-data-sampled?resource=download
+# https://www.kaggle.com/datasets/caymansmith/sleep-health-and-lifestyle-data-set-part-2
+# https://www.kaggle.com/datasets/uom190346a/sleep-health-and-lifestyle-dataset
+
+#https://colab.research.google.com/drive/1zKRDG_vYqTNJMVQcXwM2VJIhb6eyQ6RF#scrollTo=fe527577

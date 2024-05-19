@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sleep apnea</title>
+  <style>
+    :root {
+      font-size: 20px;
+    }
+
+    *,
+    *:before,
+    *:after {
+      box-sizing: border-box;
+    }
+
+    p {
+      margin: 0;
+    }
+
+    p:not(:last-child) {
+      margin-bottom: 1.5em;
+    }
+
+    body {
+      font: 1em/1.618 Inter, sans-serif;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      min-height: 100vh;
+      padding: 30px;
+      margin: 0;
+
+      color: rgb(60, 34, 83);
+      background-image: linear-gradient(-20deg, #b721ff 0%, #21d4fd 100%);
+    }
+
+    .card {
+      max-width: 300px;
+      min-height: 200px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      max-width: 700px;
+      padding: 35px;
+
+      border: 1px solid rgba(255, 255, 255, .25);
+      border-radius: 20px;
+      background-color: rgba(255, 255, 255, 0.45);
+      box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.25);
+
+      backdrop-filter: blur(15px);
+    }
+
+    .card-footer {
+      font-size: 0.65em;
+      color: #446;
+    }
+
+    .medlink {
+      text-decoration: none;
+      color: rgb(0, 0, 77);
+
+    }
+
+    .medlink:hover {
+      text-decoration: underline;
+      color: black;
+    }
+
+
+    .button-29 {
+      align-items: center;
+      appearance: none;
+      background-image: radial-gradient(100% 100% at 100% 0, #5adaff 0, #5468ff 100%);
+      border: 0;
+      border-radius: 6px;
+      box-shadow: rgba(45, 35, 66, .4) 0 2px 4px, rgba(45, 35, 66, .3) 0 7px 13px -3px, rgba(58, 65, 111, .5) 0 -3px 0 inset;
+      box-sizing: border-box;
+      color: #fff;
+      cursor: pointer;
+      display: inline-flex;
+      font-family: "JetBrains Mono", monospace;
+      height: 48px;
+      justify-content: center;
+      line-height: 1;
+      list-style: none;
+      overflow: hidden;
+      padding-left: 16px;
+      padding-right: 16px;
+      position: relative;
+      text-align: left;
+      text-decoration: none;
+      transition: box-shadow .15s, transform .15s;
+      user-select: none;
+      -webkit-user-select: none;
+      touch-action: manipulation;
+      white-space: nowrap;
+      will-change: box-shadow, transform;
+      font-size: 18px;
+    }
+
+    .button-29:focus {
+      box-shadow: #3c4fe0 0 0 0 1.5px inset, rgba(45, 35, 66, .4) 0 2px 4px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
+    }
+
+    .button-29:hover {
+      box-shadow: rgba(45, 35, 66, .4) 0 4px 8px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
+      transform: translateY(-2px);
+    }
+
+    .button-29:active {
+      box-shadow: #3c4fe0 0 3px 7px inset;
+      transform: translateY(2px);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="card">
+    <h3>We are sorry to have to inform you that you have <strong>sleep apnea</strong>.</h3>
+    <p>Sleep apnea is a condition that causes you to stop breathing while you’re sleeping. The resulting lack of oxygen
+      activates a survival reflex that wakes you up just enough to resume breathing. Sleep apnea is uncommon but
+      widespread. <br><br>
+      There are many approaches to treating sleep apnea, depending on the specific type of sleep apnea and how severe it
+      is. While none of these is a cure, they can help prevent apnea events or reduce how often they happen or how
+      severe they are. Possible treatments include: Conservative (nonmedical) treatments, Positive airway pressure and
+      adaptive ventilation devices, Oral appliances (mouthpieces), Nerve stimulators, Surgery.</p>
+    <p>To learn more about this disorder visit <a class="medlink" target="_blank"
+        href="https://my.clevelandclinic.org/health/diseases/8718-sleep-apnea">here</a>.</p>
+    <p class="card-footer">Created by Abdur & Azad</p>
+    <a href="/home"><button class="button-29">Back to home page</button></a>
+  </div>
+</body>
+
+</html>
