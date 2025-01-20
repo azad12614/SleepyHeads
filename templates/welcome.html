@@ -1,307 +1,311 @@
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>SleepyHeads</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
-        crossorigin="anonymous" referrerpolicy="no-referrer">
-    <style>
-        body {
-            margin: 0px;
-            background-color: rgb(145, 201, 201);
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>SleepyHeads</title>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+  <style>
+    body {
+      margin: 0px;
+      background-color: rgb(145, 201, 201);
+    }
 
-        .container {
-            height: 200px;
-            width: 350px;
-            position: absolute;
-            transform: translate(-50%, -50%);
-            left: 50%;
-            top: 30%;
+    .container {
+      height: 200px;
+      width: 350px;
+      position: absolute;
+      transform: translate(-50%, -50%);
+      left: 50%;
+      top: 30%;
+    }
 
-        }
+    .cat {
+      background-color: #f19b1a;
+      height: 65px;
+      width: 80px;
+      border-radius: 0 80px 80px 0;
+      position: absolute;
+      bottom: 60px;
+      right: 50px;
+    }
 
-        .cat {
-            background-color: #f19b1a;
-            height: 65px;
-            width: 80px;
-            border-radius: 0 80px 80px 0;
-            position: absolute;
-            bottom: 60px;
-            right: 50px;
-        }
+    .ear {
+      height: 15px;
+      width: 15px;
+      background-color: #f19b1a;
+      position: absolute;
+      bottom: 64px;
+      left: 8px;
+      border-radius: 20px 0 0 0;
+      box-shadow: 25px 0 #f19b1a;
+    }
 
-        .ear {
-            height: 15px;
-            width: 15px;
-            background-color: #f19b1a;
-            position: absolute;
-            bottom: 64px;
-            left: 8px;
-            border-radius: 20px 0 0 0;
-            box-shadow: 25px 0 #f19b1a;
-        }
+    .eye,
+    .eye:before {
+      height: 7px;
+      width: 10px;
+      border: 2px solid #2c2c2c;
+      position: absolute;
+      border-radius: 0 0 15px 15px;
+      border-top: none;
+    }
 
-        .eye,
-        .eye:before {
-            height: 7px;
-            width: 10px;
-            border: 2px solid #2c2c2c;
-            position: absolute;
-            border-radius: 0 0 15px 15px;
-            border-top: none;
-        }
+    .eye {
+      top: 18px;
+      left: 15px;
+    }
 
-        .eye {
-            top: 18px;
-            left: 15px;
-        }
+    .eye:before {
+      content: "";
+      left: 30px;
+    }
 
-        .eye:before {
-            content: "";
-            left: 30px;
-        }
+    .nose {
+      background-color: #ffffff;
+      height: 12px;
+      width: 12px;
+      border-radius: 50%;
+      position: absolute;
+      top: 32px;
+      left: 25px;
+      box-shadow: 12px 0 #ffffff;
+    }
 
-        .nose {
-            background-color: #ffffff;
-            height: 12px;
-            width: 12px;
-            border-radius: 50%;
-            position: absolute;
-            top: 32px;
-            left: 25px;
-            box-shadow: 12px 0 #ffffff;
-        }
+    .nose:before {
+      content: "";
+      width: 12px;
+      height: 8px;
+      position: absolute;
+      background-color: #ffffff;
+      left: 6px;
+    }
 
-        .nose:before {
-            content: "";
-            width: 12px;
-            height: 8px;
-            position: absolute;
-            background-color: #ffffff;
-            left: 6px;
-        }
+    .nose:after {
+      content: "";
+      position: absolute;
+      height: 0;
+      width: 0;
+      border-top: 8px solid #ef926b;
+      border-left: 5px solid transparent;
+      border-right: 5px solid transparent;
+      bottom: 7px;
+      left: 6px;
+    }
 
-        .nose:after {
-            content: "";
-            position: absolute;
-            height: 0;
-            width: 0;
-            border-top: 8px solid #ef926b;
-            border-left: 5px solid transparent;
-            border-right: 5px solid transparent;
-            bottom: 7px;
-            left: 6px;
-        }
+    .mouth {
+      background-color: #2c2c2c;
+      height: 15px;
+      width: 17px;
+      position: absolute;
+      border-radius: 0 0 5px 5px;
+      top: 38px;
+      left: 27px;
+      animation: mouth-move 2s infinite;
+      transform-origin: top;
+    }
 
-        .mouth {
-            background-color: #2c2c2c;
-            height: 15px;
-            width: 17px;
-            position: absolute;
-            border-radius: 0 0 5px 5px;
-            top: 38px;
-            left: 27px;
-            animation: mouth-move 2s infinite;
-            transform-origin: top;
-        }
+    @keyframes mouth-move {
+      50% {
+        transform: scaleY(0.7);
+      }
+    }
 
-        @keyframes mouth-move {
-            50% {
-                transform: scaleY(0.7);
-            }
-        }
+    .bodys {
+      background-color: #f19b1a;
+      height: 90px;
+      width: 140px;
+      position: absolute;
+      right: 65px;
+      bottom: 0;
+      border-radius: 60px 60px 0 0;
+      animation: sleep 2s infinite;
+      transform-origin: bottom right;
+    }
 
-        .bodys {
-            background-color: #f19b1a;
-            height: 90px;
-            width: 140px;
-            position: absolute;
-            right: 65px;
-            bottom: 0;
-            border-radius: 60px 60px 0 0;
-            animation: sleep 2s infinite;
-            transform-origin: bottom right;
-        }
+    @keyframes sleep {
+      50% {
+        transform: scale(0.9, 1.05);
+      }
+    }
 
-        @keyframes sleep {
-            50% {
-                transform: scale(0.9, 1.05);
-            }
-        }
+    .tail {
+      background-color: #d07219;
+      height: 20px;
+      width: 100px;
+      position: absolute;
+      right: 150px;
+      bottom: 0;
+      border-radius: 20px 0 0 20px;
+    }
 
-        .tail {
-            background-color: #d07219;
-            height: 20px;
-            width: 100px;
-            position: absolute;
-            right: 150px;
-            bottom: 0;
-            border-radius: 20px 0 0 20px;
-        }
+    .bodys:before {
+      content: "";
+      position: absolute;
+      background-color: #ffffff;
+      height: 12px;
+      width: 30px;
+      border-radius: 6px;
+      bottom: 0;
+      left: 22px;
+      box-shadow: 45px 0 #ffffff;
+    }
 
-        .bodys:before {
-            content: "";
-            position: absolute;
-            background-color: #ffffff;
-            height: 12px;
-            width: 30px;
-            border-radius: 6px;
-            bottom: 0;
-            left: 22px;
-            box-shadow: 45px 0 #ffffff;
-        }
+    .bubble {
+      height: 20px;
+      width: 20px;
+      background-color: rgba(255, 255, 255, 0.4);
+      position: absolute;
+      left: 65px;
+      top: 20px;
+      border-radius: 50px 50px 50px 5px;
+      animation: bubble-scale 2s infinite;
+    }
 
-        .bubble {
-            height: 20px;
-            width: 20px;
-            background-color: rgba(255, 255, 255, 0.4);
-            position: absolute;
-            left: 65px;
-            top: 20px;
-            border-radius: 50px 50px 50px 5px;
-            animation: bubble-scale 2s infinite;
-        }
+    @keyframes bubble-scale {
+      50% {
+        transform: scale(1.6);
+      }
+    }
 
-        @keyframes bubble-scale {
-            50% {
-                transform: scale(1.6);
-            }
-        }
+    .shadow {
+      height: 10px;
+      width: 240px;
+      background-color: rgba(0, 0, 0, 0.2);
+      border-radius: 10px;
+      position: absolute;
+      bottom: 52px;
+      left: 70px;
+      animation: shadow 2s infinite;
+    }
 
-        .shadow {
-            height: 10px;
-            width: 240px;
-            background-color: rgba(0, 0, 0, 0.2);
-            border-radius: 10px;
-            position: absolute;
-            bottom: 52px;
-            left: 70px;
-            animation: shadow 2s infinite;
-        }
+    @keyframes shadow {
+      50% {
+        transform: scaleX(0.7);
+      }
+    }
 
-        @keyframes shadow {
-            50% {
-                transform: scaleX(0.7);
-            }
-        }
+    section {
+      width: 10%;
+      height: 100vh;
+      position: relative;
+      text-align: center;
+      vertical-align: middle;
+      display: table-cell;
+      background: #f1f1f1;
+    }
 
-        section {
-            width: 10%;
-            height: 100vh;
-            position: relative;
-            text-align: center;
-            vertical-align: middle;
-            display: table-cell;
-            background: #f1f1f1
-        }
-
-        /* .logo img {
+    /* .logo img {
             max-width: 250px
         } */
 
-        .flex-row {
-            display: flex;
-            justify-content: center;
-            width: 50%;
-            margin: auto
-        }
+    .flex-row {
+      display: flex;
+      justify-content: center;
+      width: 50%;
+      margin: auto;
+    }
 
-        h2 {
-            font-size: 40px;
-            font-family: monospace;
-            letter-spacing: 10px
-        }
+    h2 {
+      font-size: 40px;
+      font-family: monospace;
+      letter-spacing: 10px;
+    }
 
-        p {
-            font-family: monospace;
-            font-size: 30px
-        }
+    p {
+      font-family: monospace;
+      font-size: 30px;
+    }
 
-        span.box {
-            width: 30%;
-            padding: 1px 0px;
-            margin: 10px;
+    span.box {
+      width: 30%;
+      padding: 1px 0px;
+      margin: 10px;
 
-            background: rgba(255, 255, 255, 0);
-            border-radius: 16px;
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-        }
+      background: rgba(255, 255, 255, 0);
+      border-radius: 16px;
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+    }
 
-        @media screen and (max-width:768px) {
-            span.box {
-                margin: 0px;
-                width: 100%;
-                margin-bottom: 10px
-            }
+    @media screen and (max-width: 768px) {
+      span.box {
+        margin: 0px;
+        width: 100%;
+        margin-bottom: 10px;
+      }
 
-            .flex-row {
-                display: inline-grid;
-                width: 100%
-            }
-        }
+      .flex-row {
+        display: inline-grid;
+        width: 100%;
+      }
+    }
 
-        .anim-heading {
-            color: #262362
-        }
+    .anim-heading {
+      color: #262362;
+    }
 
-        a {
-            text-decoration: none;
-            font-weight: 600;
-            color: #f19b1a;
-        }
+    a {
+      text-decoration: none;
+      font-weight: 600;
+      color: #f19b1a;
+    }
 
-        .anim-heading {
-            overflow: hidden;
-            white-space: nowrap;
-            margin-right: auto;
-            margin-left: auto;
-            animation: typing 5.5s steps(40, end)
-        }
+    .anim-heading {
+      overflow: hidden;
+      white-space: nowrap;
+      margin-right: auto;
+      margin-left: auto;
+      animation: typing 5.5s steps(40, end);
+      font-size: xx-large;
+    }
 
-        @keyframes typing {
-            from {
-                width: 0
-            }
+    @keyframes typing {
+      from {
+        width: 0;
+      }
 
-            to {
-                width: 100%
-            }
-        }
+      to {
+        width: 100%;
+      }
+    }
 
-        p i {
-            color: #262362;
-            margin-right: 7px
-        }
-    </style>
+    p i {
+      color: #262362;
+      margin-right: 7px;
+    }
+  </style>
 </head>
 
 <body>
-    <section>
-        <!-- <div class="logo"><img src="/static/images/sleepyheads.png" alt=""></div> -->
-        <div class="container">
-            <div class="shadow"></div>
-            <div class="cat">
-                <div class="ear"></div>
-                <div class="eye"></div>
-                <div class="mouth"></div>
-                <div class="nose"></div>
-                <div class="tail"></div>
-                <div class="bodys"></div>
-                <div class="bubble"></div>
-            </div>
-        </div>
-        <div>
-            <h2 class="anim-heading">Welcome to the SleepyHeads Website</h2>
-        </div>
-        <div class="flex-row">
-            <span class="box">
-                <a href="/home">
-                    <p class="Address"><i class="fa-solid fa-door-open"></i>Enter</p>
-                </a>
-            </span>
-        </div>
-    </section>
+  <section>
+    <!-- <div class="logo"><img src="/static/images/sleepyheads.png" alt=""></div> -->
+    <div class="container">
+      <div class="shadow"></div>
+      <div class="cat">
+        <div class="ear"></div>
+        <div class="eye"></div>
+        <div class="mouth"></div>
+        <div class="nose"></div>
+        <div class="tail"></div>
+        <div class="bodys"></div>
+        <div class="bubble"></div>
+      </div>
+    </div>
+    <div>
+      <h2 class="anim-heading">Welcome to the SleepyHeads Website</h2>
+    </div>
+    <div class="flex-row">
+      <span class="box">
+        <a href="/home">
+          <p class="Address"><i class="fa-solid fa-door-open"></i>Enter</p>
+        </a>
+      </span>
+    </div>
+  </section>
 </body>
