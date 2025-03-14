@@ -34,6 +34,15 @@ Sleep Disorder: [0 2 1]
 'Insomnia' 1,
 'Sleep Apnea' 2, 
 
+Papers:
+https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0282622
+https://pubmed.ncbi.nlm.nih.gov/25367475/
+https://pmc.ncbi.nlm.nih.gov/articles/PMC7127995/
+https://link.springer.com/article/10.1007/s41782-024-00282-7
+https://www.ncbi.nlm.nih.gov/books/NBK578199/
+https://www.mdpi.com/1424-8220/23/7/3468
+
+Datasets:
 https://www.kaggle.com/datasets/imaginativecoder/sleep-health-data-sampled
 https://www.kaggle.com/datasets/caymansmith/sleep-health-and-lifestyle-data-set-part-2
 https://www.kaggle.com/datasets/uom190346a/sleep-health-and-lifestyle-dataset
@@ -42,4 +51,4 @@ https://www.kaggle.com/datasets/hiulngccc/sleep-health-and-lifestyle-dataset-200
 https://www.kaggle.com/datasets/vincentchege/sleep-and-lifestyle
 https://www.kaggle.com/datasets/henryshan/sleep-health-and-lifestyle
 
-# https://colab.research.google.com/drive/1zKRDG_vYqTNJMVQcXwM2VJIhb6eyQ6RF#scrollTo=fe527577
+# https://drive.google.com/file/d/10PvK6cX-394jk1dT42Tx1UqHEGKhLkLb/view?usp=sharing
